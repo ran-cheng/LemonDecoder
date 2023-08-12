@@ -21,6 +21,13 @@
 namespace hyf_lemon {
 
 /**
+ * @brief decode from a cv Mat
+ * @param file - file directory *
+ * @param output - if success, output the reult
+ * @return true - if success
+ */
+bool Decode(const cv::Mat& image, std::vector<std::vector<uchar>>* output);
+/**
  * @brief decode from a image file
  * @param file - file directory *
  * @param output - if success, output the reult

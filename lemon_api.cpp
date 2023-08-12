@@ -8,7 +8,7 @@
   @copyright HengYiFeng, 2021-2023. All right reserved.
 
 *******************************************************************************/
-#define DEBUG_MAIN
+//#define DEBUG_MAIN
 
 #include "lemon_api.h"
 
@@ -20,6 +20,13 @@ using std::vector;
 using namespace cv;
 
 namespace hyf_lemon {
+
+bool Decode(const Mat& image, vector<vector<uchar>>* output) { 
+  Mat src(image.size(), CV_8UC1);
+  cvtColor(image, src, COLOR_BGR2GRAY);
+  lemon.SetImage(src);
+  return lemon.Decode(output);
+}
 
 bool Decode_file(const char* file, vector<vector<uchar>>* output) {
   Mat src = imread(file, IMREAD_GRAYSCALE);

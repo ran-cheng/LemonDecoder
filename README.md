@@ -1,10 +1,10 @@
 # LemonDecoder
 
-A simple, fast Datamatrix decoder based on OpenCV
+A simple, fast DataMatrix decoder based on OpenCV
 
 ## Usage
 
-- **LemonDecoder** relies on OpenCV 2.0.0+, the include, library directories and linkers should be configured beforehand.
+- **LemonDecoder** relies on OpenCV 4.0.0+, the include, library directories and linkers should be configured beforehand.
 
 - **Decode from a image file** 
 
@@ -37,6 +37,16 @@ A simple, fast Datamatrix decoder based on OpenCV
     // call Decode_rt, set the image size, and pointer 
     // to the captured image data
     bool hyf_lemon::Decode_rt(const int width, const int height, const uchar* image_data, std::vector<std::vector<uchar>>* output);
+    ```
+
+- **Decode from OpenCV Mat**
+
+    ```cpp
+    cv::Mat mat;
+    // ...
+    
+    // call Decode
+    bool Decode(const cv::Mat& image, std::vector<std::vector<uchar>>* output);
     ```
 
 ## LemonDecoder work flow
