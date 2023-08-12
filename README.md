@@ -46,7 +46,7 @@ There are four main steps that LemonDecoder takes to decode a image.
 - **Step 1: Image Process**. Binarize the source image, and find all contours, filter out those which are impossible to be a datamatrix.
 
     [![source image](samples/1.jpg)](samples/1.jpg)
-    ^ source image
+     source image
 
     The **Process** method of ImageProcessor will output the binarized image and all possible contours:
 
@@ -59,7 +59,7 @@ There are four main steps that LemonDecoder takes to decode a image.
     processor.Process(&binarized, &contours);    
     ```
     [![binarized image](samples/image_process.jpg)](samples/image_process.jpg)
-    ^ binarized image and possible contours
+     binarized image and possible contours
 
 - **Step 2: Datamatrix locate**. Check all possible contours again to see if they match certain features of the DataMatrix rule, then output datamatrix images.
 
@@ -74,7 +74,7 @@ There are four main steps that LemonDecoder takes to decode a image.
     int count = locator.LocateDatamatrix(image(), processor, &datamatrixs);
     ```
     [![datamatrix image](samples/datamatrix_locate.jpg)](samples/datamatrix_locate.jpg)
-    < datamatrix image
+     datamatrix image
 
 - **Step 3: Datamatrix Read**. Read every binary codes in the datamatrix image.
 
@@ -171,6 +171,24 @@ The binarization method and parameters are crucial for the likelihood of success
     ```cpp
     SetBinAdaptiveBlock(35); // odd number, defaut 25
     ```
+
+
+## Examples
+
+[![](samples/n1.jpg)](samples/n1.jpg)
+
+[![](samples/n3.jpg)](samples/n3.jpg)
+
+[![](samples/2.jpg)](samples/2.jpg)
+
+[![](samples/3.jpg)](samples/3.jpg)
+
+[![](samples/n6.jpg)](samples/n6.jpg)
+
+[![](samples/n9.jpg)](samples/n9.jpg)
+
+[![](samples/8.jpg)](samples/8.jpg)
+
 
 ## Contact
 
